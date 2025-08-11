@@ -4,7 +4,7 @@ WORKDIR /app
 
 # Copia tudo para /app
 COPY . .
-
+RUN ls -lR /app
 # Restaura as dependências (assumindo que o .csproj está na pasta ProjetoSiteProfNelson)
 RUN dotnet restore ProjetoSiteProfNelson/ProjetoSiteProfNelson.csproj
 
@@ -20,3 +20,4 @@ COPY --from=build-env /app/out .
 
 # Define o entrypoint para arrancar a aplicação
 ENTRYPOINT ["dotnet", "ProjetoSiteProfNelson.dll"]
+
