@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ["dotnet-sdk"]
+
+[phases.install]
+cmds = ["dotnet restore ProjetoSiteProfNelson/ProjetoSiteProfNelson.csproj"]
+
+[phases.build]
+cmds = ["dotnet publish ProjetoSiteProfNelson/ProjetoSiteProfNelson.csproj -c Release -o out"]
+
+[start]
+cmd = "./out/ProjetoSiteProfNelson"
