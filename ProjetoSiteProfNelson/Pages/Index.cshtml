@@ -1,0 +1,592 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!--Falta colocar o Video-->
+<div id="Introducao" class="container" style="display:block">
+    <h1 class="my-3 fw-bold">Introdução</h1>
+    <br /><hr />
+    <div >
+        <br />
+
+        <img src="Imgs/FotoMinha1.jpg"/>
+
+        <p style="text-align: justify; font-size: 18px">
+            O meu nome é Miguel Jacinto. Tenho 18 anos. Sou português e vivo em Loures.
+        </p>
+            <br />
+        <p style="text-align: justify">
+            Este website, intitulado “Apelido Bucelas: Repositório Colectivo
+            e Familiar de Memórias”, nasceu da vontade de conhecer melhor as minhas raízes e a história da terra de onde são originários os meus avós: Bucelas.
+        </p>
+           <br />
+        <p style="text-align: justify">
+            Tudo começou com um objecto que sempre esteve lá em casa — um pequeno ferro de engomar colarinhos, datado do final do século XIX. A minha mãe dizia
+            que era da minha avó, “que sempre o viu”. Esse ferro, aparentemente banal, tornou-se o ponto de partida para uma viagem à descoberta da história da
+            minha família e da comunidade de Bucelas.
+        </p>
+          <br />
+        <p style="text-align: justify">
+            A partir dessa curiosidade inicial, visitei museus locais (com destaque para o Museu da Vinha e da Vinha de Bucelas), consultei a Biblioteca
+            Municipal de Loures, a biblioteca da Junta de Freguesia de Bucelas e diversas fontes disponíveis na internet. Recolhi, fotografei e organizei
+            objectos, memórias e testemunhos. Ao longo deste processo, percebi que conhecer Bucelas era, afinal, uma forma de conhecer melhor a minha família
+            e de compreender a riqueza cultural que atravessa gerações.
+        </p>
+            <br />
+        <p style="text-align: justify">
+            Conto ainda com o apoio do professor Nelson Ribeiro, que orientou e acompanhou todo o desenvolvimento deste trabalho.
+        </p>
+            
+        <p style="text-align: justify">
+            Porque preservar a memória é dar continuidade ao que somos; porque a história de uma terra constrói-se com as histórias das famílias que nela
+            viveram — convido-vos a explorar este repositório, onde se guardam fragmentos de vidas, tradições e objectos que fazem de Bucelas um lugar cheio de significado.
+        </p>
+           
+
+    </div>
+    <br />
+    <hr />
+    <br />
+    <!--
+    <video width="640" height="360" controls>
+        <source src="videos/teuvideo.mp4" type="video/mp4">
+    </video>-->
+    <br />
+    <hr />
+    <br />
+    <div style="text-align: center;">
+        <h3 onclick="abrirJustificacao()">Caracterização do Projeto</h3>
+    </div>
+
+
+</div>
+
+<div id="Justificacao" class="container" style="display: none">
+    <h1 class="my-3 fw-bold">Caracterização do Projeto</h1>
+    <br /><hr /><br />
+    <p>
+        <!--Ainda vai ser Escrito-->
+    </p>
+    <br />
+    <hr />
+    <br />
+    <hr />
+    <br />
+    <div style="text-align: center;">
+        <h3 onclick="abrirPatrimonioF()">Património Familiar</h3>
+    </div>
+</div>
+
+<div id="Destaque" class="container" style="display:none">
+    <div class="containerPF">
+        <h1 class="my-3 fw-bold">Peça do Mês</h1>
+        <br /><hr /><br />
+        <p>Nesta secção, damos destaque a um objecto que, pela sua importância histórica, simbólica ou afectiva, merece ser olhado com especial atenção. Cada mês será dedicado a uma peça representativa da memória de Bucelas, revelando histórias do quotidiano, das famílias e das tradições locais. Este espaço pretende valorizar esses fragmentos do passado que ajudam a compreender melhor quem somos e de onde vimos. Este mês, convidamo-vos a descobrir…
+        </p>
+        <br />
+        <div class="shadow-box">
+        
+            <h2 id="tituloDM"></h2>
+            <br />
+
+            <img src="" id="imgDM" style="width:30%; padding-right: 30px; padding-bottom: 10px" class="float-start" />
+
+            <p style="text-align: justify;" id="descricaoDM"></p>
+            <br />
+            <p style="text-align: justify" id="origemDM"></p>
+            <br />
+            <a style="text-align: justify" id="referenciasDM"></a>
+        </div>
+       
+    </div> 
+    <br />
+    <hr />
+    <br />
+    <div style="text-align: center;">
+        <h3 onclick="abrirVideos()">Vídeos: Bucelas no Media</h3>
+    </div>
+</div>
+
+
+
+<div id="PatrimonioF" class="container" style="display: none">
+    <h1 class="my-3 fw-bold">Património Familiar</h1>
+    <br />
+    <hr />
+    <div class="alfabeto-container"></div>
+    <hr />
+    <script>
+        const container = document.querySelector('.alfabeto-container');
+        const alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+        alfabeto.forEach(letra => {
+          const span = document.createElement("span");
+          span.textContent = letra;
+          span.className = "letra";
+          span.onclick = () => CarregarPatrimonioFOrdenadoMenu(letra);
+          container.appendChild(span);
+        });
+    </script>
+    <br />
+    <p>
+        Nesta secção, é possível explorar um conjunto de objectos ligados à história quotidiana e familiar da comunidade de Bucelas. Cada peça foi cuidadosamente recolhida, fotografada e analisada, tendo por base a sua origem, uso e significado no contexto local.
+        Os objectos aqui apresentados têm proveniências diversas: alguns foram identificados em museus da região; outros pertencem às famílias dos autores deste repositório; e há ainda peças partilhadas generosamente por habitantes de Bucelas, que contribuíram com memórias e histórias pessoais.
+        Organizado por ordem alfabética, este índice permite uma navegação simples e intuitiva, dando acesso a descrições detalhadas, imagens e pequenos relatos que acompanham cada objecto. Do mais comum ao mais invulgar, todos têm algo para contar — sobre as vidas, os gestos e os tempos de quem habitou esta terra.
+        Convido-vos a percorrer este repositório e a descobrir, através dos objectos, fragmentos da identidade de uma comunidade com memória.
+    </p>
+    <br />
+    <hr />
+    <br />
+
+    <div class="containerPF" id="containerPF"></div>
+
+    <br />
+    <div id="paginador" class="pagination-container">
+        <button id="anterior" onclick="mudarPagina(-1)">←</button>
+        <span id="pagina-atual"></span>
+        <button id="seguinte" onclick="mudarPagina(1)">→</button>
+    </div>
+    <br />
+    <hr /><br />
+    <div style="text-align: center;">
+        <h3 onclick="abrirPatrimonioC()">Património Construído</h3>
+    </div>
+</div>
+
+<div id="PatrimonioI" class="container" style="display: none">
+    <h1 class="my-3 fw-bold">Património Imaterial</h1>
+    <br /><hr /><br />
+    <p>
+        Esta secção apresenta uma selecção de vídeos dedicados a tradições artesanais associadas a Bucelas — como a tanoaria e a cestaria - que marcaram o quotidiano rural da região.
+        Os vídeos aqui reunidos estão disponíveis publicamente e foram seleccionados por darem visibilidade ao “saber fazer” que atravessa gerações. Optou-se, sempre que possível, por cruzar registos realizados em Bucelas com outros provenientes de diferentes regiões, nomeadamente de Espanha, onde se reconhecem práticas semelhantes.
+        Este diálogo entre vídeos permite compreender como certas tradições, apesar de geograficamente distintas, partilham técnicas, gestos e valores comuns. Revela também como o património imaterial é simultaneamente local e universal — enraizado nas comunidades, mas ligado por fios invisíveis de cultura e memória.
+        Convido-vos a explorar esta galeria e a descobrir o que une Bucelas ao mundo através das mãos que trabalham e das histórias que resistem ao tempo.
+
+    </p>
+    <br />
+    <div class="shadow-box">
+        <h2>Tanoaria</h2>
+        <div>
+            <div class="shadow-box">
+                <h5>A Tanoaria em Bucelas</h5>
+                <p>
+                    Estes vídeos apresentam o trabalho de Zé Espiga, um dos últimos tanoeiros da região, destacando a arte de confeccionar barris de madeira:
+                </p>
+                <br />
+                <div class="video-container">
+                    <iframe src="https://tviplayer.iol.pt/programa/jornal-da-uma/53c6b2633004dc00624392e1/video/62c43d070cf2ea367d443a32" frameborder="0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/JZ3UGqYjFhw" frameborder="0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/aDkNuFgyuqU" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="shadow-box">
+                <h5>O Saber Fazer noutros espaços</h5>
+                <p>
+                    Estes vídeos apresentam o trabalho de tanoeiros de outras regiões portuguesas, destacando a partilha de técnicas artesanais.
+                </p>
+                <br />
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/6ocz4Jktz58" frameborder="0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/2jwf3wFBwQw" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="shadow-box">
+                <h5>Tanoaria Espanhola</h5>
+                <p>
+                    Vídeos que mostram práticas de tanoaria em regiões espanholas, permitindo uma comparação com as técnicas utilizadas em Bucelas.
+                </p>
+                <br />
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/LWkmDX_KJaQ&list=LL&index=1" frameborder="0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/EtMTO5N2nwU" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+    <br />
+    <div class="shadow-box">
+        <h2>Cestaria</h2>
+        <div>
+            
+            <div class="shadow-box">
+                <h5>Gente com bom interior: A arte da Cestaria de Odivelas</h5>
+                <p>
+                    Este vídeo explora a tradição da cestaria na região de Odivelas, próxima de Bucelas, destacando técnicas e histórias locais.
+                </p>
+                <br />
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/ColTY2wcMSI" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="shadow-box">
+                <h5>Rota da Cestaria e Vime</h5>
+                <p>
+                    Um documentário que percorre a tradição da cestaria e do vime em várias regiões, incluindo Bucelas, mostrando a continuidade e adaptação dessas práticas.
+                </p>
+                <br />
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/e4Q0WWsbIts" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="shadow-box">
+                <h5>Cestaria em Espanha</h5>
+                <p>
+                    Este vídeo mostra práticas de cestaria em regiões espanholas, permitindo uma comparação com as técnicas utilizadas em Bucelas.
+                </p>
+                <br />
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/FmAnh46qHrQ" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <hr />
+    <br />
+    <div style="text-align: center;">
+        <h3 onclick="abrirDestaque()">Peça do Mês</h3>
+    </div>
+</div>
+
+<div id="PatrimonioC" class="container" style="display: none">
+    <h1 class="my-3 fw-bold">Património Construído</h1>
+    <br /><hr /><br />
+    <p style ="text-align: justify;">
+        Esta secção apresenta um mapa interactivo que reúne alguns dos principais elementos do património construído da freguesia de Bucelas. Igrejas, adegas, pontes, casas senhoriais, fontanários e outros marcos arquitectónicos foram identificados, localizados e contextualizados, permitindo uma leitura visual e histórica do território.
+        Mais do que simples edifícios, estes espaços são testemunhos vivos da memória colectiva e das histórias das famílias que aqui viveram. Ao preservar e dar visibilidade a este património, contribuímos para reforçar a identidade local, valorizando a herança cultural que atravessa gerações.
+        Convido-vos a explorar o mapa, descobrir lugares com história e, quem sabe, reconhecer memórias partilhadas.
+    </p>
+    <br />
+    <div id="map" style="height: 400px;"></div>
+    <br />
+    <hr />
+    <br />
+    <div style="text-align: center;">
+        <h3 onclick="abrirPatrimonioI()">Património Imaterial</h3>
+    </div>
+</div>
+
+<div id="Videos" class="container" style="display: none">
+    <h1 class="my-3 fw-bold">Vídeos: Bucelas no Media</h1>
+    <br /><hr /><br />
+    <p>
+        Nesta secção, reúnem-se vídeos de acesso público que mostram Bucelas ao longo do tempo, com especial enfoque nas suas festividades, tradições e momentos significativos da vida local.
+        Estes registos, maioritariamente provenientes de arquivos audiovisuais como o da RTP ou o da Câmara Municipal de Loures, não são da autoria dos criadores deste website, mas foram seleccionados por reflectirem a riqueza cultural e a identidade comunitária de Bucelas.
+        Ao explorar esta galeria, é possível revisitar celebrações ligadas ao vinho e à vindima, conhecer costumes locais, e escutar vozes e rostos que fazem parte da história colectiva da freguesia.
+        Convido-vos a mergulhar nestas imagens que eternizam memórias e dão visibilidade à herança viva de Bucelas.
+    </p>
+    <br />
+    <hr />
+    <br />
+    <div id="videosContainer" class="video-container-Videos"></div>
+
+    <br />
+    <hr />
+    <br />
+    <div style="text-align: center;">
+        <h3 onclick="abrirPalavraE()">Palavra de Especialista</h3>
+    </div>
+</div>
+
+<div id="PalavraE" class="container" style="display: none">
+    <h1 class="my-3 fw-bold">Palavra de Especialista</h1>
+    <br />
+    <hr />
+    <br />
+    <p>
+
+    </p>
+    <br />
+    <hr />
+
+    <div id="especialistasContainer"></div>
+
+</div>
+<div id="PalavraP" class="container" style="display: none">
+    <h1 class="my-3 fw-bold">Palavra de Professor</h1>
+    <br /><hr /><br />
+    <p>
+       <!--ÃInda vai ser escrito-->   
+    </p>
+    <br />
+    <hr />
+    <br />
+    <hr />
+    <br />
+    <div style="text-align: center;">
+        <h3 onclick="abrirPartilhe()">Partilhe a sua História</h3>
+    </div>
+</div>
+<div id="Partilhe" class="container" style="display: none">
+    <h1 class="my-3 fw-bold">Partilhe a sua História</h1>
+    <br /><hr /><br />
+    <p >
+        Queremos que este repositório seja um espaço vivo e participativo, onde a comunidade de Bucelas pode contribuir para a preservação da memória coletiva e para o enriquecimento do conhecimento sobre as famílias locais.
+        Se tem um objeto com uma história especial ligado a Bucelas, convidamo-lo a partilhá-lo connosco. Pode enviar uma fotografia do objeto e contar-nos a sua história através do formulário abaixo.
+    </p>
+    <br />
+    <hr />
+    <br />
+    <div class="shadow-box" style="max-width: 600px; margin: auto;">
+        <h3>Submeter Item - Património Familiar</h3>
+        <form method="POST" enctype="multipart/form-data">
+
+            <label class="required-field" for="nomeItem">Nome do Item:</label>
+            <input type="text" id="NomeItem" name="NomeItem" placeholder="Ex: Tesoura da poda" required>
+
+            <label class="required-field" for="descricao">Descrição:</label>
+            <textarea id="Descricao" name="Descricao" rows="5" placeholder="Descreva o item..." required></textarea>
+
+            <label class="required-field" for="origem">Origem:</label>
+            <input type="text" id="Origem" name="Origem" placeholder="Ex: Museu da Vinha e do Vinho de Bucelas" required>
+
+            <label for="referencia">Referência:</label>
+            <input class="required-field" type="text" id="Referencia" name="Referencia" placeholder="Fonte ou documento" required>
+
+            <label class="required-field" for="imagem">Imagem:</label>
+            <input type="file" id="Imagem" name="Imagem" accept="image/*" required>
+
+            <button type="submit" class="btn-enviar">Enviar Item</button>
+            <br />
+            @if (TempData["Mensagem"] != null)
+            {
+                <p>@TempData["Mensagem"]</p>
+            }
+        </form>
+    </div><br />
+    <p>
+        Se preferir, também pode contactar diretamente os coordenadores deste projeto:
+    </p>
+    <div class="contact-info" >
+        <h4 style="margin-bottom: 15px; color: #333;">Contacto</h4>
+        <p style="margin: 5px 0;"><strong>Coordenadores do Projeto:</strong></p>
+        <ul style="list-style: none; padding-left: 0; margin: 0 0 15px 0; color: #555;">
+            <li>Miguel Jacinto</li>
+            <p style="margin: 5px 0;"><strong>Email:</strong> <a href="mailto:mafjacinto2007@gmail.com" style="color: #007bff; text-decoration: none;">mafjacinto2007@gmail.com</a></p>
+            <p style="margin: 5px 0;"><strong>Telefone:</strong> <a href="tel:+964204922" style="color: #007bff; text-decoration: none;">964 204 922</a></p>
+            <li>Nelson Ribeiro</li>
+            <p style="margin: 5px 0;"><strong>Email:</strong> <a href="mailto:Ferreiraribeiro.nelson@gmail.com" style="color: #007bff; text-decoration: none;">Ferreiraribeiro.nelson@gmail.com</a></p>
+            <p style="margin: 5px 0;"><strong>Telefone:</strong> <a href="tel:+964367363" style="color: #007bff; text-decoration: none;">964 367 363</a></p>
+        </ul>
+        
+    </div>
+    <p>
+        A sua colaboração é fundamental para enriquecer este acervo, fortalecer as ligações familiares e manter viva a memória das nossas famílias e da nossa terra.
+    </p>
+    <br />
+    <hr />
+    <br />
+    <div style="text-align: center;">
+        <h3 onclick="abrirRede()">Rede Comunitária de Bucelas e Parcerias</h3>
+    </div>
+</div>
+
+<div id="Rede" class="container" style="display: none">
+    <h1 class="my-3 fw-bold">Rede Comunitária de Bucelas e Parcerias</h1>
+    <br /><hr /><br />
+    <p >
+        Este projecto conta com o apoio e colaboração de várias associações, instituições e grupos da freguesia de Bucelas, que desempenham um papel essencial na preservação da memória local, na dinamização cultural e na construção de uma identidade comunitária viva e participativa.
+        Abaixo, disponibilizamos os contactos das entidades que, de diferentes formas, contribuem para a valorização do património, das tradições e da coesão social de Bucelas. Se quiser entrar em contacto com alguma delas, partilhar informação ou propor parcerias, deixamos aqui os dados de cada uma:
+    </p>
+    <br />
+    <hr />
+    <br />
+    <div class="d-flex flex-wrap gap-5 justify-content-center" id="RedeContainerImgs"></div>
+    <br />
+    <hr />
+    <br />
+    <div style="text-align: center;">
+        <h3 onclick="abrirConclusao()">Conclusão</h3>
+    </div>
+</div>
+
+<div id="Conclusao" class="container" style="display: none">
+    <h1 class="my-3 fw-bold">Conclusão</h1>
+    <br /><hr /><br />
+    <p>
+    <!--Ainda vai ser Escrito-->  
+    </p>
+    <br />
+    <hr />
+    <br />
+    <hr />
+    <br />
+    <div style="text-align: center;">
+        <h3 onclick="abrirFontes()">Fontes</h3>
+    </div>
+</div>
+
+<div id="Fontes" class="container" style="display: none">
+    <h1 class="my-3 fw-bold">Fontes</h1>
+    <hr />
+    <br />
+    <h5>Fontes impressas / Livros / Documentos físicos</h5>
+    <ul>
+        <li>Câmara Municipal de Loures. (1992, outubro). Monumentos e edifícios notáveis do Concelho de Loures</li>
+        <li>Câmara Municipal de Loures. (1996). Jornadas sobre cultura saloia, 2 e 3 dezembro 1994: Comunicações. Departamento Sócio-Cultural, Divisão do Património Cultural</li>
+        <li>Câmara Municipal de Loures. (2000). Vindimando as memórias: Bucelas e os seus vinhos [Catálogo de exposição]</li>
+        <li>Câmara Municipal de Loures. (2006). Estudo de colecções: transportes e alfaias agrícolas</li>
+        <li>Câmara Municipal de Loures – Divisão do Património Cultural e Bibliotecas. (2022). Intervenção arqueológica no Largo do Espírito Santo, em Bucelas: dos séculos I e II da nossa Era à Necrópole moderna. Coord. F. Estêvão & N. Antunes-Ferreira</li>
+        <li>Câmara Municipal de Loures. (2023). Bucelas – Terra de Arinto. Divisão do Património Cultural e Bibliotecas, Unidade de Património e Museologia</li>
+        <li>Ferreira, F. M. (1998, maio). Levantamento do património cultural construído da freguesia de Bucelas [Relatório não publicado]</li>
+        <li>Gomes, J. P. (s.d.). Povo e religião no termo de Loures</li>
+        <li>Machado, J. (2001). A cerâmica tradicional portuguesa. Lisboa: Imprensa Nacional-Casa da Moeda</li>
+        <li>Santos Simões, J. M. (1971). A faiança portuguesa dos séculos XVII a XIX. Lisboa: Fundação Calouste Gulbenkian</li>
+    </ul>
+    <h5>Websites institucionais, educativos e culturais</h5>
+    <ul>
+        <li><a href="https://artsandculture.google.com/" target="_blank">Google Arts & Culture</a></li>
+        <li><a href="https://books.openedition.org/" target="_blank">Open Edition Books</a></li>
+        <li><a href="https://www.ivv.gov.pt/np4/home.html" target="_blank">Instituto da Vinha e do Vinho</a></li>
+        <li><a href="https://museu.cm-palmela.pt/" target="_blank">Museu Municipal Palmela</a></li>
+        <li><a href="https://www.patrimoniocultural.gov.pt/" target="_blank">Património Cultural</a></li>
+        <li><a href="https://programasaberfazer.gov.pt/" target="_blank">Programa Nacional Saber Fazer Portugal</a></li>
+        <li><a href="https://www.saberfazer.org/" target="_blank">Saber Fazer</a></li>
+    </ul>
+    <h5> Vídeos (YouTube)</h5>
+    <ul>
+
+        <li>
+            <a href="https://www.youtube.com/watch?v=7wvuLLXsF_w" target="_blank">Barris e barris artesanais. Fabrico tradicional deste recipiente para vinho | Documentário</a>
+        </li>
+        <li>
+            <a href="https://www.youtube.com/watch?v=9XAO48BY43o" target="_blank">Barril de madeira feito à mão para conservar o vinho. Fabricado por um tanoeiro especialista</a>
+            </li>
+        <li><a href="https://www.youtube.com/watch?v=Bw7hOZ6wWs8" target="_blank">
+                Barril gigante para armazenar milhares de litros de vinho. Construção com madeira passo a passo
+            </a>
+        </li>
+        <li><a href="https://www.youtube.com/watch?v=JGE9xMajYHI" target="_blank">
+                O trabalhador de latão Criação de peças em folha-de-flandres com 80 anos de experiência
+            </a>
+        </li>
+        <li>
+            <a href="https://www.youtube.com/watch?v=OUWdInH2JWg" target="_blank">
+                José, o COOPER. Elaboração artesanal de BARRIS E CASKS para armazenar o vinho | Documentário
+        </a></li>
+        <li>
+            <a href="https://www.youtube.com/watch?v=TniYfmfJP7M" target="_blank">
+                Vinho de madeira de pinho e seu sabor resinoso. É assim que as uvas são pisadas e prensadas
+        </a></li>
+        <li>
+            <a href="https://www.youtube.com/watch?v=XF6Lm7WGHvw" target="_blank">
+
+                Peças de lata feitas à mão. Moldagem tradicional deste metal | Negócios perdidos | Documentário
+        </a></li>
+    </ul>
+
+    <h5>Blogs, E-commerce, Pinterest, Wikipedia e outros websites</h5>
+    <ul>
+
+        <li><a href="https://www.antoniomacanita.com/" target="_blank">
+            António Maçanita WineMaker</a></li>
+        <li>
+            <a href="https://cintraseupovo.blogspot.com" target="_blank">
+                CintraSeuPovo
+        </a></li>
+        <li><a href="https://www.dmg.com.pt/produtos" target="_blank">
+            Depósito da Marinha Grande</a></li>
+        <li><a href="https://enxada.pt/" target="_blank">
+            Enxada.pt</a></li>
+        <li>
+            <a href="https://www.etsy.com/in-en/listing" target="_blank">
+            Etsy
+        </a></li>
+        <li><a href="https://folclore.pt/os-trajes-dos-saloios" target="_blank">
+            Folclore de Portugal</a></li>
+        <li>
+            <a href="https://jf-bucelas.pt/" target="_blank">
+            Freguesia Bucelas
+        </a></li>
+        <li>
+            <a href="https://loja.cestariabranco.com/" target="_blank">
+                Cestaria Branco
+        </a></li>
+        <li>
+            <a href="https://mqc.madeira.gov.pt/noticias/a-faianca-portuguesa" target="_blank">
+            Museu Quinta das Cruzes
+        </a></li>
+        <li>
+            <a href="https://www.ovinosecaprinos.com/saloiahistoria.html" target="_blank">
+                Sociedade Portuguesa de Ovinotecnia e Caprinotecnia
+        </a></li>
+        <li>
+            <a href="https://pt.pinterest.com/" target="_blank">
+            Pinterest
+        </a></li>
+        <li>
+            <a href="http://www.ranchodomilharado.pt/app/regiao.html" target="_blank">
+            Rancho Folclórico de S. Miguel do Milharado
+        </a></li>
+        <li>
+            <a href="https://skywaterland.blogspot.com/2016/03/" target="_blank">
+            A.ruralidades
+        </a></li>
+        <li>
+            <a href="https://trajesdeportugal.blogspot.com" target="_blank">
+            Trajes de Portugal
+        </a></li>
+        <li>
+            <a href="https://valadodosfradesfotos.blogspot.com/p/o-valado-e-faianca.html" target="_blank">
+                Vallado dos Frades - Um século de fotos
+        </a></li>
+        <li>
+            <a href="https://velhariastralhasetraquitanas.blogspot.com/2014/10/" target="_blank">
+                Velhariastralhasetraquitanas
+        </a></li>
+        <li>
+            <a href="https://pt.wikipedia.org/wiki/Fábrica_de_Loiça_de_Sacavém" target="_blank">
+                Wikipédia - Fábrica de Loiça de Sacavém
+        </a></li>
+    </ul>
+    <br />
+    <hr />
+    <br />
+    <div style="text-align: center;">
+        <h3 onclick="abrirAutores()">Autores</h3>
+    </div>
+</div>
+
+<div id="Autores" class="container" style="display: none">
+    <h1 class="my-3 fw-bold">Autores</h1>
+    <hr />
+
+    <div>
+        <h2>Miguel António Fernandes Jacinto</h2>
+        <p>Autor</p>
+        <img src="~/Imgs/FotoMinha2.jpg" alt="Miguel Jacinto" />
+        <p>
+            Miguel Jacinto é aluno do curso profissional de Programação e Gestão de Sistemas Informáticos na Escola Secundária Dr. António de Carvalho Figueiredo. Começou o seu percurso no ensino secundário na área de Ciências e Tecnologias, mas acabou por descobrir na informática um verdadeiro interesse, o que o levou a mudar de curso e a aprofundar os seus conhecimentos na área da programação, redes e sistemas operativos.
+        </p>
+        <p>
+            Apesar da formação técnica, Miguel sempre demonstrou uma grande curiosidade pelas ciências humanas, em especial pela História. Leitor atento de romances históricos e clássicos da literatura, encontrou neste projeto uma forma de cruzar duas paixões: a tecnologia e a preservação da memória coletiva. Desde o início, viu neste desafio mais do que um simples trabalho escolar — viu uma oportunidade de valorizar as histórias de vida das famílias de Bucelas e de criar algo útil e duradouro para a comunidade.
+        </p>
+        <p>
+            Com o apoio do professor Nelson Tiago Ferreira Ribeiro, Miguel comprometeu-se a dar forma a esta ideia, aprendendo a identificar fontes primárias e secundárias, a preparar entrevistas e a recolher testemunhos com respeito e sensibilidade. O projeto tornou-se um arquivo vivo, digital, que pretende combater o esquecimento num tempo em que tudo passa depressa demais.
+        </p>
+        <p>
+            Além do seu empenho pessoal, Miguel tem também um historial de envolvimento cívico, colaborando com o Banco Alimentar e outras iniciativas sociais. Essa ligação ao serviço comunitário reforça a motivação com que abraçou este projeto, que vê como um contributo importante para a valorização da história local.
+        </p>
+    </div>
+
+    <hr />
+
+    <div>
+        <h2>Nelson Tiago Ferreira Ribeiro</h2>
+        <p>Coordenador / Tutor</p>
+        <img src="~/Imgs/FotoProf1.jpg" alt="Professor Nelson Ribeiro" />
+        <p>
+            Nelson Tiago Ferreira Ribeiro é professor de História no Agrupamento de Escolas 4 de Outubro – Escola Secundária Dr. António de Carvalho Figueiredo. Quando o aluno Miguel Jacinto lhe apresentou o desafio de criar este projeto, aceitou com entusiasmo, comprometendo-se a ajudar na sua orientação. Apesar de Miguel ser da área da informática, longe do campo da História, demonstrou um interesse incrível pela disciplina, procurando aprender não só onde encontrar fontes primárias e secundárias, mas também que pessoas entrevistar para enriquecer o trabalho.
+        </p>
+        <p>
+            Este projeto é uma recolha sem fim, uma tentativa de preservar a memória das famílias de Bucelas num mundo cada vez mais digital e sujeito ao esquecimento. É um trabalho aberto e vivo, que depende da partilha e do envolvimento da comunidade para continuar a crescer e a enriquecer o conhecimento sobre a história local.
+        </p>
+        <p>
+            Além do empenho do aluno e do professor, o projeto tem contado com o apoio de várias instituições locais, como a Junta de Freguesia de Bucelas, a Câmara Municipal de Loures e muitas outras, que têm sido fundamentais para garantir que as memórias, tradições e histórias das famílias de Bucelas sejam preservadas e valorizadas para as gerações futuras.
+        </p>
+    </div>
+</div>

@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProjetoSiteProfNelson</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ProjetoSiteProfNelson.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+<body>
+
+    <div class="layout-flex">
+        <!-- Menu Vertical Fixo -->
+        <header class="sidebar-header">
+            <nav class="sidebar">
+                <img src="~/Imgs/logo.png" alt="Logo" class="sidebar-logo" />
+                <br />
+                <div class="scrollbarmenu">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="abrirIntroducao()" href="#">Introdução</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="abrirJustificacao()" href="#">Caracterização do Projeto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="abrirPatrimonioF()" href="#">Património Familiar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="abrirPatrimonioC()" href="#">Património Construído</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="abrirPatrimonioI()" href="#">Património Imaterial</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="abrirDestaque()" href="#">Peça do Mês</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="abrirVideos()" href="#">Vídeos: Bucelas no Media</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="abrirPalavraE()" href="#">Palavra de Especialista</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="abrirPalavraP()" href="#">Palavra de Professor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="abrirPartilhe()" href="#">Partilhe a sua História</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="abrirRede()" href="#">Rede Comunitária de Bucelas e Parcerias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="abrirConclusao()" href="#">Conclusão</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="abrirFontes()" href="#">Fontes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="abrirAutores()" href="#">Autores</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <div class="app-bar">
+            <img src="~/Imgs/logo.png" alt="Logo" class="sidebar-logo" />
+            <button id="menuToggle" class="menu-toggle-btn">☰</button>
+        </div>
+
+        <!-- Container do Conteúdo + Footer -->
+        <div class="content-wrapper">
+            <!-- Conteúdo Principal (com rolagem) -->
+            <main class="main-content">
+                @RenderBody()
+            </main>
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container d-flex">
+                    <div class="footer-text">
+                        <p>© 2025 Apelido Bucelas. Todos os direitos reservados.</p>
+                        <p>Desenvolvido por Miguel Jacinto.</p>
+                        <p>Contactos: mafjacinto2007@gmail.com | +964 204 922</p>
+                    </div>
+                    <div class="logos">
+                        <img src="Imgs/footer/AE4OUTUBRO.jpg" alt="Associação 25 de Abril" loading="lazy">
+                        <img src="Imgs/footer/aph.png" alt="Associação Portuguesa de Historiadores" loading="lazy">
+                        <img src="Imgs/footer/EUSTORY.png" alt="Eustory Network" loading="lazy">
+                        <img src="Imgs/footer/hesperides.jpg" alt="Fundação Hespérides" loading="lazy">
+                        <img src="Imgs/footer/RMR.jpg" alt="Rádio Macau Relâmpago" loading="lazy">
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
