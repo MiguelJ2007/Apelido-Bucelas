@@ -13,6 +13,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     ));
 builder.Services.AddControllers();
 builder.Services.AddAuthorization();
+/*
+// Configurar porta para Railway
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+*/
 
 var app = builder.Build();
 

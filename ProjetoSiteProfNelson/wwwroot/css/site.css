@@ -86,11 +86,7 @@ body {
             background: #555;
         }
 
-.sidebar-logo {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-}
+
 .content-wrapper {
     flex: 1;
     margin-left: 320px;
@@ -291,12 +287,14 @@ hr {
     .app-bar {
         display: flex !important;
     }
-    .app-bar img {
-        margin: auto 0;
-        height: 100%;
-        width: 70px;
-    }
+        .app-bar img {
+            margin: auto 0;
+            max-width: 100%;
+            height: auto;
+            width: 150px;
+        }
     .content-wrapper {
+        margin-top: 40px; /* Garante que o conteúdo não sobreponha o footer */
         padding-top: 50px; /* Altura da .app-bar */
         margin-left: 0;
         width: 100%;
@@ -319,7 +317,7 @@ hr {
     top: 0;
     left: 0;
     right: 0;
-    height: 56px;
+    height: auto;
     background-color: #fefdfb;
     border-bottom: 1px solid #ddd;
     z-index: 900;
@@ -504,15 +502,7 @@ h3 {
 }
 
 
-#Introducao img {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin: 0 20px 15px 0;
-    float: left;
-}
+
 
 #Fontes {
     font-family: 'Arial', sans-serif;
@@ -714,4 +704,26 @@ form textarea {
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #666;
+}
+
+
+.containerImgsIntro p {
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+}
+.containerImgsIntro {
+    float: left;
+    width: 100%;
+    max-width: 250px;
+    margin: 0 20px 10px 0;
+}
+
+.containerImgsIntro img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    float: left;
 }

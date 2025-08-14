@@ -388,7 +388,7 @@ function FecharMain() {
     document.getElementById("Conclusao").style.display = "none";
     document.getElementById("Fontes").style.display = "none";
     document.getElementById("Autores").style.display = "none";
-
+    document.getElementById("PalavraA").style.display = "none";
 }
 
 var itens;
@@ -580,6 +580,10 @@ function abrirPalavraE() {
 function abrirPalavraP() {
     FecharMain();
     document.getElementById("PalavraP").style.display = "block";
+}
+function abrirPalavraA() {
+    FecharMain();
+    document.getElementById("PalavraA").style.display = "block";
 }
 function abrirRede() {
     FecharMain();
