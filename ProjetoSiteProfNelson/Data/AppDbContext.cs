@@ -12,5 +12,6 @@ namespace ProjetoSiteProfNelson.Data
         public DbSet<ITEMS> ITEMS { get; set; }
         public DbSet<PATRIMONIOC> PATRIMONIOC { get;set; }
         public DbSet<PALAVRAE> PALAVRAE { get; set; }
+        public DbSet<PALAVRAA> PALAVRAA { get; set; }
     }
 }

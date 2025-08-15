@@ -94,7 +94,6 @@ async function GetRPE() {
         console.error('Erro ao carregar especialistas:', error);
     }
 }
-
 async function carregarRespostasPE() {
 
     await GetRPE();
@@ -131,6 +130,52 @@ async function carregarRespostasPE() {
     });
 }
 
+var autarcas;
+async function GetRPA() {
+    try {
+        const resposta = await fetch("api/PalavraA");
+        if (!resposta.ok) {
+            throw new Error(`HTTP error! status: ${resposta.status}`);
+        }
+        autarcas = await resposta.json();
+
+    } catch (error) {
+        console.error('Erro ao carregar especialistas:', error);
+    }
+}
+async function carregarRespostasPA() {
+
+    await GetRPA();
+    const container = document.getElementById('autarcasContainer');
+    if (container.children.length > 0) return;
+    autarcas.forEach(esp => {
+        const div = document.createElement('div');
+        div.classList.add('especialista');
+
+        div.innerHTML = `
+            <img src="Imgs/palavraa/${esp.imagem ? esp.imagem : "user.png"}" alt="Foto de ${esp.nome}" />
+            <div style="flex:1;">
+                <p style="font-weight:bold; font-size:1.2em; margin:0 0 5px 0;">${esp.nome}</p>
+                <p style="color:#555; margin-bottom:15px;">${esp.cargo}</p>
+                <p class="pergunta">1. De que forma os objetos do quotidiano e as memórias familiares ajudam a compreender a história de uma comunidade como Bucelas?</p>
+                <p class="resposta">${esp.p1}</p>
+
+                <p class="pergunta">2. Por que motivos é importante valorizar e estudar a história das famílias no contexto da história local?</p>
+                <p class="resposta">${esp.p2}</p>
+
+                <p class="pergunta">3. Como podem os testemunhos e as memórias orais das famílias complementar ou desafiar os registos históricos tradicionais?</p>
+                <p class="resposta">${esp.p3}</p>
+
+                <p class="pergunta">4. Que critérios devemos ter em conta para preservar objetos e memórias familiares para as gerações futuras?</p>
+                <p class="resposta">${esp.p4}</p>
+
+                <p class="pergunta">5. Quais os riscos de não preservar estas memórias e objetos no que respeita à identidade e memória coletiva?</p>
+                <p class="resposta">${esp.p5}</p>
+            </div>
+        `;
+        container.appendChild(div);
+    });
+}
 
 function carregarImgsRede() {
     // Lista de nomes de imagens
@@ -584,6 +629,7 @@ function abrirPalavraP() {
 function abrirPalavraA() {
     FecharMain();
     document.getElementById("PalavraA").style.display = "block";
+    carregarRespostasPA();
 }
 function abrirRede() {
     FecharMain();

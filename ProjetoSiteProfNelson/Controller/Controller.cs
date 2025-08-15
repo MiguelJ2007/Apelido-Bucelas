@@ -127,5 +127,18 @@ namespace ProjetoSiteProfNelson.Controller
                 return BadRequest("Erro ao obter palavras: " + ex.Message);
             }
         }
+        [HttpGet("PalavraA")]
+        public IActionResult GetPalavraA()
+        {
+            try
+            {
+                var query = _context.PALAVRAA.ToList();
+                return Ok(query);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Erro ao obter palavras: " + ex.Message);
+            }
+        }
     }
 }

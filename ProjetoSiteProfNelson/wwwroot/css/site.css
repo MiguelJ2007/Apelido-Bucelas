@@ -738,3 +738,45 @@ form textarea {
         max-width: none;
     }
 }
+
+.containerImgsPP {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+    /* Cada bloco de imagem + legenda */
+    .containerImgsPP figure {
+        flex: 1 1 calc(50% - 10px); /* duas colunas no desktop */
+        max-width: calc(50% - 10px);
+        margin: 0;
+        text-align: center;
+    }
+
+        .containerImgsPP figure img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .containerImgsPP figure figcaption {
+            font-size: 11px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        /* Se houver só 1 figura, ocupa toda a largura */
+        .containerImgsPP figure:only-child {
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+
+/* No telemóvel, sempre 1 por linha */
+@media (max-width: 768px) {
+    .containerImgsPP figure {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
