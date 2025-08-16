@@ -544,6 +544,8 @@ function CarregarPatrimonioFOrdenadoMenu(letra) {
     </div>
 `;
         document.getElementById("pagina-atual").textContent = "0 - 0";
+        document.getElementById("anterior").disabled = true;
+        document.getElementById("seguinte").disabled = true;
         return;
     } else if (totalPaginas === 1) {
         document.getElementById("pagina-atual").textContent = `1 - 1`;
@@ -589,6 +591,9 @@ function Pesquisar() {
             </div>
         `;
         document.getElementById("pagina-atual").textContent = "0 - 0";
+
+        document.getElementById("anterior").disabled = true;
+        document.getElementById("seguinte").disabled = true;
         return;
     }
 
