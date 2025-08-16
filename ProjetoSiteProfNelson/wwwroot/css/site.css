@@ -830,7 +830,6 @@ form textarea {
         margin-left: 20px;
         margin-right: 0;
     }
-
 @media (max-width: 768px) {
     .containerImgsJ {
         float: none !important; /* ignora os floats */
@@ -921,4 +920,12 @@ th {
     text-transform: uppercase;
     font-size: 13px;
     letter-spacing: 0.5px;
+}
+
+.topo-direita {
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: right; /* alinha o texto à direita */
+    color: #333;
+    font-style: italic; /* para dar estilo de citação, se quiser */
 }
