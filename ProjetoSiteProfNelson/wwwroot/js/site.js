@@ -194,7 +194,6 @@ function carregarImgsRede() {
         { nome: "GRUPOCOLUMBOFILOBUCELAS.jpg", titulo: "Grupo Columbófilo de Bucelas", email: "gcolumbofilobucelas@sapo.pt" },
         { nome: "GRUPOMUSICALERECREATIVODABEMPOSTA.png", titulo: "Grupo Musical e Recreativo da Bemposta", email: "gmrbemposta1951@gmail.com" },
         { nome: "INSTITUIÇÃOAPOIOSOCIAL.jpg", titulo: "Instituição de Apoio Social da Freguesia de Bucelas", email: "geraliasfbucelas@gmail.com" },
-        { nome: "JUNTAFREGUESIABUCELAS.png", titulo: "Junta de Freguesia de Bucelas", email: "secretaria@jf-bucelas.pt" },
         { nome: "MotoClubeCascata.jpg", titulo: "Moto Clube Cascata", email: "moto.clube.cascata@gmail.com" },
         { nome: "nucleosportinguista.jpg", titulo: "Núcleo Sportinguista de Bucelas", email: "nsbucelas@hotmail.com" },
         { nome: "ParoquiaBucelas.jpg", titulo: "Paróquia de Bucelas", email: "paroquia-bucelas@ictusup4.pt" },
@@ -464,11 +463,11 @@ async function CarregarPatrimonioF() {
         div.innerHTML = `
             <h2>${item.nome}</h2>
             <br/>
-            <img src="Imgs/items/${item.imagem}" alt="${item.nome}" class="float-start" />
+            <img src="Imgs/items/${item.imagem}" alt="${item.nome}" style="float:left;" />
             <p><strong>Descrição: </strong>${item.descricao}</p>
-            <br/>
+            
             <p><strong>Origem: </strong>${item.origem}</p>
-            <br/>
+            
             ${linkHTML}
         `;
         fragment.appendChild(div);
