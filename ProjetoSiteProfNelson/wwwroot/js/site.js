@@ -585,7 +585,7 @@ function Pesquisar() {
                 font-size: 18px;
                 font-style: italic;
             ">
-                <p>Não foram encontrados itens que correspondam à pesquisa.</p>
+                <p>Por agora, este fragmento da memória permanece em silêncio...</p>
             </div>
         `;
         document.getElementById("pagina-atual").textContent = "0 - 0";
