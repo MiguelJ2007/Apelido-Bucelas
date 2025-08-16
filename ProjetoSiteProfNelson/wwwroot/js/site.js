@@ -553,6 +553,57 @@ function CarregarPatrimonioFOrdenadoMenu(letra) {
         CarregarPatrimonioFOrdenado(letra);
     }
 }
+
+function Pesquisar() {
+
+    playGif(document.getElementById("btnP"));
+
+    const input = document.getElementById("barrapesquisa").value.toLowerCase();
+
+
+    // Filtrar os itens pelo nome ou descrição
+    const itensFiltrados = itens.filter(item =>
+        item.nome.toLowerCase().includes(input)
+    );
+
+    // Guardar para usar na paginação
+    itensOrdenados = itensFiltrados;
+    ordenada = true;
+    letraord = ""; // sem filtro por letra, apenas pesquisa
+
+    const totalPaginas = Math.ceil(itensOrdenados.length / 3);
+
+    if (totalPaginas === 0) {
+        document.getElementById("containerPF").innerHTML = `
+            <div style="
+                padding: 20px;
+                background-color: #f8f9fa;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                text-align: center;
+                color: #555;
+                font-size: 18px;
+                font-style: italic;
+            ">
+                <p>Não foram encontrados itens que correspondam à pesquisa.</p>
+            </div>
+        `;
+        document.getElementById("pagina-atual").textContent = "0 - 0";
+        return;
+    }
+
+    // Atualizar paginador
+    document.getElementById("pagina-atual").textContent = `1 - ${totalPaginas}`;
+
+    // Carregar a primeira página
+    CarregarPatrimonioFOrdenado();
+}
+function keypress(event) {
+
+    if (event.key === "Enter") {
+        Pesquisar();
+    }
+}
 function mudarPagina(direcao) {
 
     const paginas = document.getElementById("pagina-atual").textContent.split(" - ");
@@ -646,5 +697,13 @@ function abrirFontes() {
 function abrirAutores() {
     FecharMain();
     document.getElementById("Autores").style.display = "block";
+}
+
+function playGif(button) {
+    const img = button.querySelector("img");
+    img.src = "/Imgs/lupa.gif";    // troca para o gif
+    setTimeout(() => {
+        img.src = "/Imgs/lupa.png"; // volta para a imagem estática após 1.5s
+    }, 1060); // ajusta este tempo à duração do teu gif
 }
 

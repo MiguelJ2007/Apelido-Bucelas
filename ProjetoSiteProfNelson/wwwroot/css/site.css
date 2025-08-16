@@ -710,7 +710,6 @@ form textarea {
 .containerImgsIntro p {
     text-align: center;
     font-size: 11px;
-    font-weight: bold;
 }
 .containerImgsIntro {
     float: left;
@@ -762,7 +761,7 @@ form textarea {
         }
 
         .containerImgsPP figure figcaption {
-            font-size: 11px;
+            font-size:11px;
             font-weight: bold;
             margin-top: 5px;
         }
@@ -780,3 +779,107 @@ form textarea {
         max-width: 100%;
     }
 }
+
+#Introducao video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.containerImgsJ {
+    max-width: 250px;
+    margin: 0 20px 10px 0;
+}
+
+    .containerImgsJ figure {
+        margin: 0;
+        text-align: center;
+    }
+
+        .containerImgsJ figure img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .containerImgsJ figure figcaption {
+            font-size: 11px;
+            margin-top: 5px;
+        }
+
+    /* alternância */
+    .containerImgsJ:nth-of-type(odd) {
+        float: left; /* imagens ímpares à esquerda */
+        margin-right: 20px;
+        margin-left: 0;
+    }
+
+    .containerImgsJ:nth-of-type(even) {
+        float: right; /* imagens pares à direita */
+        margin-left: 20px;
+        margin-right: 0;
+    }
+
+@media (max-width: 768px) {
+    .containerImgsJ {
+        float: none !important; /* ignora os floats */
+        max-width: 100% !important;
+        margin: 20px auto; /* centraliza */
+    }
+
+        .containerImgsJ figure img {
+            max-width: 100% !important; /* imagem ocupa 100% da largura */
+        }
+       
+}
+
+.search-group {
+    display: flex;
+    width: 280px;
+    height: 38px; /* altura fixa */
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #d1d5db; /* borda para o grupo de pesquisa */
+}
+
+    .search-group input {
+        flex-grow: 1;
+        font-size: 14px;
+        height: 100%;
+        border: none;
+        margin: auto 0;
+        line-height: 38px; /* mesma altura do container */
+        box-sizing: border-box; /* inclui padding e borda no cálculo da altura */
+    }
+
+        .search-group input:focus {
+            outline: none;
+            border-color: #d1d5db;
+            box-shadow: none;
+        }
+
+    .search-group button {
+        border: none;
+        width: 42px;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        height: 100%; /* igual altura do input */
+        padding: 0;
+    }
+
+        .search-group button:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .search-group button:hover img {
+            transform: scale(1.1);
+            transition: transform 0.2s;
+        }
