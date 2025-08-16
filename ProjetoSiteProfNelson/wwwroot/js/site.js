@@ -157,19 +157,19 @@ async function carregarRespostasPA() {
             <div style="flex:1;">
                 <p style="font-weight:bold; font-size:1.2em; margin:0 0 5px 0;">${esp.nome}</p>
                 <p style="color:#555; margin-bottom:15px;">${esp.cargo}</p>
-                <p class="pergunta">1. De que forma os objetos do quotidiano e as memórias familiares ajudam a compreender a história de uma comunidade como Bucelas?</p>
+                <p class="pergunta">1. Acha importante criar um repositório digital para guardar e partilhar objetos e memórias de Bucelas? Porquê?</p>
                 <p class="resposta">${esp.p1}</p>
 
-                <p class="pergunta">2. Por que motivos é importante valorizar e estudar a história das famílias no contexto da história local?</p>
+                <p class="pergunta">2. Como acha que a recolha de memórias e objetos familiares pode contribuir para fortalecer a ligação das pessoas à sua história e comunidade?</p>
                 <p class="resposta">${esp.p2}</p>
 
-                <p class="pergunta">3. Como podem os testemunhos e as memórias orais das famílias complementar ou desafiar os registos históricos tradicionais?</p>
+                <p class="pergunta">3. De que forma um projeto destes pode ajudar a valorizar a história e a identidade da nossa terra?</p>
                 <p class="resposta">${esp.p3}</p>
 
-                <p class="pergunta">4. Que critérios devemos ter em conta para preservar objetos e memórias familiares para as gerações futuras?</p>
+                <p class="pergunta">4. Como imagina que Bucelas possa beneficiar cultural e turisticamente com este repositório?</p>
                 <p class="resposta">${esp.p4}</p>
 
-                <p class="pergunta">5. Quais os riscos de não preservar estas memórias e objetos no que respeita à identidade e memória coletiva?</p>
+                <p class="pergunta">5. Que mensagem gostaria de deixar aos moradores de Bucelas sobre este projeto?</p>
                 <p class="resposta">${esp.p5}</p>
             </div>
         `;
