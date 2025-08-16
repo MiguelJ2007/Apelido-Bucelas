@@ -779,14 +779,15 @@ form textarea {
         max-width: 100%;
     }
 }
-
-#Introducao video {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
+#Introducao iframe {
+    width: 100%; /* ocupa toda a largura do container */
+    max-width: 800px; /* limita o tamanho máximo */
+    aspect-ratio: 16/9; /* mantém proporção 16:9 */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
+    display: block; /* evita inline spacing */
+    margin: 20px auto; /* centraliza horizontalmente e dá espaçamento */
+    border: none;
 }
 
 .containerImgsJ {
