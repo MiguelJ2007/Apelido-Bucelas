@@ -249,7 +249,7 @@ async function DestaquesMensaisCarregarPag() {
         if (data.referencia) {
             if (data.referencia.startsWith("http")) {
                 referencia.href = data.referencia;
-                referencia.innerHTML = `<strong style="color: black">Referencia:</strong> ${data.referencia}`;
+                referencia.innerHTML = `<strong style="color: black">Referência:</strong> ${data.referencia}`;
                 referencia.target = "_blank"; // abre numa nova aba
             } else {
                 referencia.removeAttribute("href");
