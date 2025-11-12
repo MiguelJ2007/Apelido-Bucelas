@@ -433,6 +433,7 @@ function FecharMain() {
     document.getElementById("Fontes").style.display = "none";
     document.getElementById("Autores").style.display = "none";
     document.getElementById("PalavraA").style.display = "none";
+    document.getElementById("OvelhaSaloia").style.display = "none";
 }
 
 var itens;
@@ -671,6 +672,11 @@ function abrirVideos() {
 function abrirPartilhe() {
     FecharMain();
     document.getElementById("Partilhe").style.display = "block";
+}
+
+function abrirOvelhaSaloia() {
+    FecharMain();
+    document.getElementById("OvelhaSaloia").style.display = "block";
 }
 function abrirPalavraE() {
     FecharMain();
