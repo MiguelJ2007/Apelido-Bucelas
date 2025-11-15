@@ -178,12 +178,11 @@ hr {
 .logos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     gap: 10px;
-    max-width: 100%;
+    max-width: 50%;
     overflow: hidden;
-  
     /* ... outros estilos ... */
     background-color: white; /* Fundo uniforme */
     padding: 10px;
@@ -214,7 +213,7 @@ hr {
 .content-wrapper {
     position: relative;
     min-height: calc(100vh - 60px); /* Ajuste conforme necessário */
-    padding-bottom: 100px; /* Espaço para o footer */
+    padding-bottom: 150px; /* Espaço para o footer */
     box-sizing: border-box;
 }
 
