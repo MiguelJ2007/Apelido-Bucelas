@@ -44,9 +44,34 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.style.overflow = '';
         }
     });
-
+    toggleSection('caracterizacao');
    
 });
+
+function toggleSection(sectionId) {
+    const content = document.getElementById(sectionId);
+    const icon = document.getElementById(`icon-${sectionId}`);
+
+    // Fecha todas as outras seções
+    document.querySelectorAll('.section-content').forEach(section => {
+        if (section.id !== sectionId) {
+            section.classList.remove('active');
+        }
+    });
+
+    // Reseta todas as outras setas
+    document.querySelectorAll('.toggle-icon').forEach(arrow => {
+        if (arrow.id !== `icon-${sectionId}`) {
+            arrow.classList.remove('rotated');
+        }
+    });
+
+    // Alterna a seção atual
+    content.classList.toggle('active');
+    icon.classList.toggle('rotated');
+}
+
+
 
 function carregarVideosBucelas() {
     const videos = [
